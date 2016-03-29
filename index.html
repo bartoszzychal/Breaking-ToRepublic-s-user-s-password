@@ -76,7 +76,7 @@
 					</section>
 
 					<section>
-						<h4>Hashes have length 40 character, so I guessed it's SHA256</h4>
+						<h4>Hashes have length 40 character, so I guessed it's SHA160</h4>
 					</section>
 
 					<section>
@@ -108,7 +108,7 @@ return sha1($salt.sha1($str));
 					<section>
 						<h3>So passwords were hashed by schema:</h3>
 						<p>
-							SHA256(SALT+SHA256(password))
+							SHA160(SALT+SHA160(password))
 						</p>
 					</section>
 
