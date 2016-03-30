@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>Breaking ToRepublic's user's password</title>
+		<title>ToRepublic password cracking</title>
 
 		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
 		<meta name="author" content="Hakim El Hattab">
@@ -55,16 +55,13 @@
 				<section>
 					<h2>What is ToRepublic?</h2>
 					<p>
-						ToRepublic is a forum in deep anonymous Internet
-					</p>
-					<p>
-						called Tor.
+						ToRepublic is a forum in deep web (TOR).
 					</p>
 						<p class="fragment">Forum's database and source code were leaked</p>
 						<p><span class="fragment">...and</span>
 							<span class="fragment">are here:</span>
 							<span class="fragment">
-								<a href="https://github.c	https://github.com/torepublic/torepublic">	https://github.com/torepublic/torepublic</a>
+								<a href="https://github.com/ToRepublic/ToRepublic">	https://github.com/ToRepublic/ToRepublic</a>
 							</span>
 						</p>
 				</section>
@@ -76,7 +73,7 @@
 					</section>
 
 					<section>
-						<h4>Hashes have length 40 character, so I guessed it's SHA160</h4>
+							<h4>Hashes have a length of 40 characters (hex encoded), so I guessed it's SHA1</h4>
 					</section>
 
 					<section>
@@ -108,7 +105,7 @@ return sha1($salt.sha1($str));
 					<section>
 						<h3>So passwords were hashed by schema:</h3>
 						<p>
-							SHA160(SALT+SHA160(password))
+							SHA1(SALT+SHA1(password))
 						</p>
 					</section>
 
@@ -128,7 +125,7 @@ return sha1($salt.sha1($str));
 				</p>
 			</section>
 			<section>
-				<h3>Major loop</h3>
+				<h3>Main loop</h3>
 				<pre>
 					<code class="hljs" data-trim contenteditable>
 while (dictionary.ready() && existsNotBreakHash) {
@@ -144,7 +141,7 @@ while (dictionary.ready() && existsNotBreakHash) {
 					</code>
 				</pre>
 				<p>
-					To generate hash I use Apache Commons Codec
+					Apache Commons Codec is used to generate the digests.
 				</p>
 			</section>
 		</section>
@@ -152,25 +149,25 @@ while (dictionary.ready() && existsNotBreakHash) {
 			<section>
 				<h3>Results</h3>
 				<p>
-					Dictionary: 4GB (320*10<sup>6</sup> words)
+					Dictionary: <b>4GB (320*10<sup>6</sup> words)</b>
 				</p>
 				<p>
-					Hashes to break about: 2000
+					Hashes to crack: <b>~2000</b>
 				</p>
 				<p>
-					Hashed breaked: 103
+					Hashes cracked: <b>103</b>
 				</p>
 				<p>
-					Generated hashes: 40*10<sup>9</sup>
+					Digests generated: <b>40*10<sup>9</sup></b>
 				</p>
 				<p>
-					Time: 40h
+					Time: <b>40h</b>
 				</p>
 				<p>
-					CPU: Intel® Core™ i7-4810MQ 2.8 GHz
+					CPU: <b>Intel® Core™ i7-4810MQ 2.8 GHz</b>
 				</p>
 				<p>
-					CPU usage: 100%
+					CPU usage: <b>100%</b>
 				</p>
 			</section>
 		 	<script type="text/javascript">
@@ -178,7 +175,7 @@ while (dictionary.ready() && existsNotBreakHash) {
 		 	</script>
 			<section>
 				<h3>Example</h3>
-				<table class="reveal">
+				<table style="align:center;">
 					<thead>
 						<th>
 							user_id
